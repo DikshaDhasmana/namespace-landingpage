@@ -78,12 +78,12 @@ const WhoWeServeSection = () => {
             {audiences.map((audience, index) => (
               <div 
                 key={index}
-                className="group relative h-48 sm:h-52 cursor-pointer overflow-hidden bg-namespace-black/80 border border-namespace-white/20 rounded-2xl transition-all duration-300"
+                className="group relative h-auto sm:h-52 cursor-pointer overflow-hidden bg-namespace-black/80 border border-namespace-white/20 rounded-2xl transition-all duration-300"
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
                 {/* Front content - visible by default */}
-                <div className="absolute inset-0 p-4 sm:p-6 flex flex-col items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 mb-4">
+                <div className="absolute inset-0 p-4 sm:p-6 flex flex-row sm:flex-col items-center sm:justify-center gap-4 sm:gap-0 transition-opacity duration-300 group-hover:opacity-0">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 sm:mb-4">
                     <SEOLazyImage 
                       src={audience.image} 
                       alt={`${audience.title} - NAMESPACE audience segment illustration`}
@@ -93,7 +93,7 @@ const WhoWeServeSection = () => {
                     />
                   </div>
                   
-                  <h3 className="text-lg sm:text-xl font-sora font-bold text-center text-namespace-white">
+                  <h3 className="text-lg sm:text-xl font-sora font-bold text-left sm:text-center text-namespace-white">
                     {audience.title}
                   </h3>
                 </div>
