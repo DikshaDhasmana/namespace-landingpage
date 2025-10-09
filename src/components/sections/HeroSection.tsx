@@ -241,12 +241,6 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-
-        {/* Scroll hint */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 hidden lg:flex items-center space-x-2 text-muted-foreground">
-          <span className="text-lg font-medium">Scroll to explore</span>
-          <ChevronRight className="w-16 h-16 animate-pulse" />
-        </div>
       </div>
     </section>
   );
