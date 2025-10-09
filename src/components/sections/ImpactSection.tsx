@@ -123,7 +123,7 @@ const ImpactSection = () => {
           </h2>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 lg:gap-8 mb-16 md:mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-6 lg:gap-8 mb-16 md:mb-20">
             {stats.map((stat, index) => (
               <div
                 key={stat.key}

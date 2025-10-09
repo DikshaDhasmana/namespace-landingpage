@@ -130,27 +130,27 @@ const HeroSection = () => {
           <div className="lg:pl-12 flex-1">
             <div className="space-y-6 progressive-reveal">
               <div className="space-y-4">
-                <div className="inline-flex items-center space-x-2 bg-namespace-white/80 border border-namespace-purple/20 px-4 sm:px-6 py-2 sm:py-3 rounded-full">
+                <div className="inline-flex items-center space-x-2 bg-namespace-white/80 border border-namespace-purple/20 px-6 py-3 rounded-full">
                   <div className="w-2 h-2 bg-namespace-purple rounded-full animate-pulse" />
-                  <span className="text-xs sm:text-sm font-medium text-namespace-purple transition-all duration-500">
+                  <span className="text-sm font-medium text-namespace-purple transition-all duration-500">
                     {taglines[currentTaglineIndex]}
                   </span>
                 </div>
 
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-sora font-bold leading-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold leading-tight">
                   Welcome to
                   <br />
                   <span className="text-namespace-purple inline-flex items-center">
                     {typedText}
                     <span
-                      className={`ml-1 w-1 h-10 sm:h-12 md:h-16 lg:h-20 bg-namespace-purple transition-all duration-700 ease-in-out ${
+                      className={`ml-1 w-1 h-8 sm:h-12 md:h-14 lg:h-16 bg-namespace-purple transition-all duration-700 ease-in-out ${
                         showCursor ? "opacity-100" : "opacity-30"
                       }`}
                     />
                   </span>
                 </h1>
 
-                <p className="text-lg sm:text-xl md:text-2xl lg:text-2xl text-muted-foreground max-w-2xl font-inter">
+                <p className="text-base sm:text-lg md:text-xl lg:text-xl text-muted-foreground max-w-2xl font-inter">
                   Building the Ecosystem for Humans and Organizations in Tech
                 </p>
               </div>
