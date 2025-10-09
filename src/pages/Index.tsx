@@ -45,7 +45,7 @@ const Index = () => {
       {/* Logo */}
       <Logo />
       
-      <div className="w-full">
+      <div className="w-full snap-y snap-mandatory h-screen overflow-y-scroll">
         <HeroSection />
         <Suspense fallback={
           <div className="scroll-section min-h-screen flex items-center justify-center">
