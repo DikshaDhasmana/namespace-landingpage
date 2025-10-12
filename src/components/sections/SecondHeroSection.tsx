@@ -1,8 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { useState } from "react";
 
 const SecondHeroSection = () => {
   const { ref, hasIntersected } = useIntersectionObserver({ threshold: 0.3 });
+  const [selectedFeature, setSelectedFeature] = useState<{ title: string; description: string } | null>(null);
+  
   const features = [
     {
       title: "Borderless Ecosystem",
@@ -86,19 +90,20 @@ const SecondHeroSection = () => {
             {features.map((feature, index) => (
               <div 
                 key={index}
+                onClick={() => setSelectedFeature(feature)}
                 className="group relative h-20 sm:h-24 lg:h-28 rounded-2xl border border-namespace-purple/20 bg-namespace-white hover:border-namespace-purple/40 hover:shadow-sm transition-all duration-300 overflow-hidden cursor-pointer"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 {/* Default state - Dot and Title */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-3 sm:p-4 transition-all duration-300 group-hover:opacity-0">
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-3 sm:p-4 transition-all duration-300 lg:group-hover:opacity-0">
                   <div className="w-3 h-3 sm:w-4 sm:h-4 bg-namespace-purple rounded-full mb-2 sm:mb-3"></div>
                   <h3 className="text-xs sm:text-sm lg:text-base font-sora font-semibold text-center text-namespace-black leading-tight">
                     {feature.title}
                   </h3>
                 </div>
 
-                {/* Hover state - Description */}
-                <div className="absolute inset-0 bg-namespace-purple rounded-2xl p-3 sm:p-4 flex flex-col justify-center transform scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300">
+                {/* Hover state - Description (Desktop only) */}
+                <div className="hidden lg:flex absolute inset-0 bg-namespace-purple rounded-2xl p-3 sm:p-4 flex-col justify-center transform scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300">
                   <h3 className="text-xs sm:text-sm font-sora font-bold text-center text-namespace-white mb-1 sm:mb-2">
                     {feature.title}
                   </h3>
@@ -109,6 +114,20 @@ const SecondHeroSection = () => {
               </div>
             ))}
           </div>
+
+          {/* Mobile Dialog */}
+          <Dialog open={!!selectedFeature} onOpenChange={() => setSelectedFeature(null)}>
+            <DialogContent className="sm:max-w-md bg-namespace-white">
+              <DialogHeader>
+                <DialogTitle className="text-namespace-purple font-sora text-xl">
+                  {selectedFeature?.title}
+                </DialogTitle>
+              </DialogHeader>
+              <p className="text-namespace-black/80 text-base leading-relaxed">
+                {selectedFeature?.description}
+              </p>
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
     </section>
