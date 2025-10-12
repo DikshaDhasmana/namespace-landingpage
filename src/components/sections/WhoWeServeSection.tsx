@@ -78,12 +78,12 @@ const WhoWeServeSection = () => {
             {audiences.map((audience, index) => (
               <div 
                 key={index}
-                className="group relative h-48 sm:h-52 cursor-pointer overflow-hidden bg-namespace-black/80 border border-namespace-white/20 rounded-2xl transition-all duration-300"
+                className="group relative h-28 lg:h-48 sm:h-52 cursor-pointer overflow-hidden bg-namespace-black/80 border border-namespace-white/20 rounded-2xl transition-all duration-300"
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
-                {/* Front content - visible by default */}
-                <div className="absolute inset-0 p-4 sm:p-6 flex flex-col items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 mb-4">
+                {/* Front content - horizontal on mobile, vertical on desktop */}
+                <div className="absolute inset-0 p-4 sm:p-6 flex lg:flex-col flex-row items-center justify-center lg:justify-center gap-3 lg:gap-0 transition-opacity duration-300 group-hover:opacity-0">
+                  <div className="w-12 h-12 lg:w-16 lg:h-16 sm:w-20 sm:h-20 lg:mb-4 flex-shrink-0">
                     <SEOLazyImage 
                       src={audience.image} 
                       alt={`${audience.title} - NAMESPACE audience segment illustration`}
@@ -93,7 +93,7 @@ const WhoWeServeSection = () => {
                     />
                   </div>
                   
-                  <h3 className="text-lg sm:text-xl font-sora font-bold text-center text-namespace-white">
+                  <h3 className="text-base lg:text-lg sm:text-xl font-sora font-bold text-center lg:text-center text-left text-namespace-white flex-1 lg:flex-initial">
                     {audience.title}
                   </h3>
                 </div>
