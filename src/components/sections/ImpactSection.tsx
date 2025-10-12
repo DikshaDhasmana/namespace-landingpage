@@ -136,12 +136,12 @@ const ImpactSection = () => {
                   transitionDelay: `${index * 200}ms`
                 }}
               >
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-8 hover:bg-white/10 hover:border-purple-400/30 transition-all duration-300 h-32 md:h-36 flex items-center justify-center">
-                  <div className="text-center flex flex-col justify-center">
-                    <div className="text-3xl md:text-2xl lg:text-3xl font-bold mb-3 text-white">
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-8 hover:bg-white/10 hover:border-purple-400/30 transition-all duration-300 h-20 md:h-36 flex items-center justify-center">
+                  <div className="text-center flex flex-row md:flex-col items-center justify-center gap-3 md:gap-0 w-full">
+                    <div className="text-2xl md:text-2xl lg:text-3xl font-bold md:mb-3 text-white flex-shrink-0">
                       {stat.value.toLocaleString()}{stat.suffix}
                     </div>
-                    <div className="text-sm md:text-sm font-medium text-white/80 leading-tight">
+                    <div className="text-xs md:text-sm font-medium text-white/80 leading-tight text-left md:text-center flex-1 md:flex-initial">
                       {stat.label}
                     </div>
                   </div>
